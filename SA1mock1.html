@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Literacy SA1 Mock Exam</title>
+    <!-- Tailwind CSS for sleek, modern, Keynote-style UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Very light gray, minimalist */
+            color: #111827;
+            overflow-x: hidden;
+        }
+        
+        .keynote-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .option-btn {
+            transition: all 0.2s ease;
+            border: 2px solid #e5e7eb;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #6366f1;
+            background-color: #eef2ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-btn.correct {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            color: #166534;
+        }
+
+        .option-btn.incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .pop {
+            animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.95); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Streak fire animation */
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .fire-active {
+            color: #f97316;
+            animation: flicker 1s infinite alternate;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+
+    <!-- LANDING PAGE -->
+    <div id="landing-view" class="w-full max-w-4xl mx-auto flex flex-col items-center justify-center slide-up">
+        <div class="text-center mb-10">
+            <div class="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-semibold tracking-wide mb-4">
+                Primary 5 SA1
+            </div>
+            <h1 class="text-5xl font-bold tracking-tight text-gray-900 mb-6">Digital Literacy Mock Exam</h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                Welcome! This mock assessment will test your knowledge on the core concepts of computing and digital literacy. Prepare for a 60-question marathon!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-12">
+            <!-- Chapter 1 -->
+            <div class="keynote-card p-8 flex flex-col items-start">
+                <div class="bg-blue-100 p-3 rounded-xl mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Chapter 1</h3>
+                <p class="text-gray-500 font-medium mb-3">Storage on My Computer</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Internet of Things (IoT)</li>
+                    <li>• Input-Process-Output Model</li>
+                    <li>• Storage Devices & Cloud</li>
+                    <li>• Binary (0s and 1s)</li>
+                </ul>
+            </div>
+            <!-- Chapter 2 -->
+            <div class="keynote-card p-8 flex flex-col items-start">
+                <div class="bg-purple-100 p-3 rounded-xl mb-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Chapter 2</h3>
+                <p class="text-gray-500 font-medium mb-3">Address of Digital Data</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Networks (LAN, WAN, etc.)</li>
+                    <li>• Routers & Switches</li>
+                    <li>• Data Packets & IP Addresses</li>
+                    <li>• Security & Encryption</li>
+                </ul>
+            </div>
+            <!-- Chapter 3 -->
+            <div class="keynote-card p-8 flex flex-col items-start">
+                <div class="bg-green-100 p-3 rounded-xl mb-4">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Chapter 3</h3>
+                <p class="text-gray-500 font-medium mb-3">Organising Text in Word</p>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Find and Replace</li>
+                    <li>• Tables, Rows & Columns</li>
+                    <li>• Merging & Splitting Cells</li>
+                    <li>• Document Views</li>
+                </ul>
+            </div>
+        </div>
+
+        <button onclick="startQuiz()" class="bg-gray-900 hover:bg-indigo-600 text-white text-xl font-medium py-4 px-12 rounded-full shadow-lg transition-colors duration-300 transform hover:scale-105">
+            Start SA1 Quiz
+        </button>
+    </div>
+
+    <!-- QUIZ INTERFACE -->
+    <div id="quiz-view" class="w-full max-w-3xl mx-auto hidden flex-col h-full relative">
+        
+        <!-- Progress Bar -->
+        <div class="w-full bg-gray-200 rounded-full h-1.5 mb-6">
+            <div id="progress-bar" class="bg-indigo-600 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+
+        <!-- Gamification HUD -->
+        <div class="flex justify-between items-center mb-6 px-2">
+            <div class="flex items-center space-x-3 bg-white px-5 py-3 rounded-full shadow-sm border border-gray-100">
+                <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <span class="font-bold text-gray-700">Score: <span id="score-display" class="text-indigo-600 text-xl">0</span></span>
+            </div>
+            <div class="text-sm font-semibold text-gray-400">
+                Question <span id="current-q-num">1</span> of <span id="total-q-num">60</span>
+            </div>
+            <div class="flex items-center space-x-3 bg-white px-5 py-3 rounded-full shadow-sm border border-gray-100">
+                <svg id="streak-icon" class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg>
+                <span class="font-bold text-gray-700">Streak: <span id="streak-display" class="text-gray-500 text-xl">0</span></span>
+            </div>
+        </div>
+
+        <!-- Question Area -->
+        <div class="keynote-card p-10 mb-6 slide-up w-full">
+            <h2 id="question-text" class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-8 leading-tight">
+                Question Text Here
+            </h2>
+            <div id="options-container" class="flex flex-col space-y-4">
+                <!-- Options injected by JS -->
+            </div>
+        </div>
+
+        <!-- Feedback & Explanation (Hidden initially) -->
+        <div id="feedback-panel" class="keynote-card p-8 mb-6 hidden w-full border-l-8">
+            <div class="flex items-center mb-4">
+                <div id="feedback-icon" class="mr-4"></div>
+                <h3 id="feedback-title" class="text-2xl font-bold">Feedback</h3>
+            </div>
+            <div id="feedback-explanation" class="text-gray-600 leading-relaxed text-lg">
+                Explanation text here.
+            </div>
+            <div class="mt-8 flex justify-end">
+                <button onclick="nextQuestion()" class="bg-gray-900 hover:bg-gray-800 text-white py-3 px-8 rounded-full font-medium shadow-md transition-all">
+                    Next Question →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- END SCREEN -->
+    <div id="end-view" class="w-full max-w-2xl mx-auto hidden flex-col items-center justify-center keynote-card p-12 text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Exam Completed!</h2>
+        <p class="text-gray-500 mb-8 text-lg">You've finished the full 60-question SA1 Digital Literacy Mock Exam.</p>
+        
+        <div class="bg-indigo-50 border border-indigo-100 rounded-3xl p-8 mb-10 w-full flex flex-col items-center">
+            <div class="relative mb-4">
+                <svg class="w-24 h-24 text-indigo-500 drop-shadow-md" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd" style="display:none;" id="badge-bronze"></path></svg>
+                <svg class="w-32 h-32 text-yellow-400 drop-shadow-xl" fill="currentColor" viewBox="0 0 20 20" id="badge-gold"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
+            </div>
+            <h3 id="badge-text" class="text-2xl font-bold text-gray-800 mb-2">Digital Master Badge</h3>
+            <div class="flex items-center space-x-2 text-indigo-600">
+                <span class="text-5xl font-black" id="final-score">0</span>
+                <span class="text-xl font-medium mt-2">Points</span>
+            </div>
+        </div>
+
+        <button onclick="location.reload()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-8 rounded-full transition-colors mb-8">
+            Restart Exam
+        </button>
+
+        <div class="border-t border-gray-100 w-full pt-6 text-sm text-gray-400 flex flex-col items-center">
+            <span class="mb-1 uppercase tracking-widest text-xs font-semibold">Student Credentials</span>
+            <span>Name: ______________________</span>
+            <span>Class: ______________________</span>
+        </div>
+    </div>
+
+    <script>
+        // --- QUIZ DATA ---
+        // 60 Questions strictly derived directly from Chapters 1-3 textbook material.
+        const quizData = [
+            // --- CHAPTER 1: Storage on My Computer (20 Questions) ---
+            {
+                chapter: 1,
+                question: "What are computing devices connected to the Internet called?",
+                options: [
+                    "Internet of Technology",
+                    "Internet of Things (IoT)",
+                    "Input of Things",
+                    "Internal Output Transfer"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> According to the textbook, computing devices connected to the Internet are called the Internet of Things (IoT). These devices are everywhere, from smart TVs to home hubs and smart irrigation systems."
+            },
+            {
+                chapter: 1,
+                question: "What component in an IoT device gathers data from its surroundings, such as temperature, light, or motion?",
+                options: [
+                    "Actuators",
+                    "Sensors",
+                    "Cloud Storage",
+                    "Modem"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that many IoT devices include sensors that detect changes in the environment, such as a smart thermostat collecting temperature data to show how warm or cold your home is."
+            },
+            {
+                chapter: 1,
+                question: "What are 'actuators' in computing?",
+                options: [
+                    "Devices that make something work or move after taking instructions from a computer.",
+                    "The main folders in a computer's storage hierarchy.",
+                    "Programs used to format tables in Word.",
+                    "Cables that transmit data using light signals."
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> As defined in the textbook, actuators are devices that make something work or move after taking instructions from a computer. For example, if it is too cold, a smart thermostat can act as an actuator to turn on the heating."
+            },
+            {
+                chapter: 1,
+                question: "How do Smart Refrigerators use IoT technology?",
+                options: [
+                    "They adjust the traffic lights outside your house.",
+                    "They track the amount of food left and remind you when you are running low on grocery items.",
+                    "They monitor your home using motion sensors to detect open doors.",
+                    "They act as a server farm to store your videos."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that smart refrigerators can track the amount of food left in them. They can remind you when you are running low on grocery items, so you know when to buy them."
+            },
+            {
+                chapter: 1,
+                question: "In the Input-Process-Output (IPO) model, what happens during the 'Input' stage?",
+                options: [
+                    "The system transforms data into something useful.",
+                    "The system produces an outcome or action on a screen.",
+                    "The system receives data or information from sources like a keyboard or sensors.",
+                    "The system connects to a wide area network."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook explains that during the Input stage, the system receives data or information. Inputs can come from various sources, such as a keyboard, microphone, or sensors."
+            },
+            {
+                chapter: 1,
+                question: "In the IPO model, what happens during the 'Process' stage?",
+                options: [
+                    "The system receives data.",
+                    "The system transforms the input data into something useful or analyses it to make decisions.",
+                    "The system prints a document on paper.",
+                    "The system permanently deletes corrupted files."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> According to the textbook, during the Process stage, the system transforms the input data into something useful or analyses it to make decisions. This may involve calculations, editing, or formatting."
+            },
+            {
+                chapter: 1,
+                question: "In the IPO model, what happens during the 'Output' stage?",
+                options: [
+                    "The system receives data from a sensor.",
+                    "The system performs calculations on the data.",
+                    "The system produces an outcome or action based on the processed data.",
+                    "The system uploads the data to cloud storage."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook notes that at the Output stage, the system produces an outcome or action based on the processed data. Outputs may appear on a screen, be heard through speakers, or be printed on paper."
+            },
+            {
+                chapter: 1,
+                question: "In a computer's folder hierarchy, what is the main folder called?",
+                options: [
+                    "Subfolder",
+                    "Root folder",
+                    "Zip file",
+                    "Server folder"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook compares the folder hierarchy to a tree. The Root folder is the main folder, like the trunk of the tree, while subfolders are like the branches and leaves."
+            },
+            {
+                chapter: 1,
+                question: "Solid State Drives (SSD) found inside computers are examples of what type of storage?",
+                options: [
+                    "Cloud Storage",
+                    "External Storage",
+                    "Internal Storage",
+                    "Network Storage"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook provides Solid State Drives (SSD) found in computers as an example of internal storage. They offer fast access to data and are reliable for immediate tasks."
+            },
+            {
+                chapter: 1,
+                question: "What is a major challenge associated with Internal Storage?",
+                options: [
+                    "It requires a constant internet connection to access.",
+                    "It has limited space and can slow down the computer if there is too much data.",
+                    "It is easily lost because it is small and portable.",
+                    "It cannot coordinate with other parts of the system."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> According to the textbook, challenges of internal storage include limited space, and it can slow down the computer if there is too much data."
+            },
+            {
+                chapter: 1,
+                question: "What is a major benefit of Cloud Storage (like Google Drive or Dropbox)?",
+                options: [
+                    "It offers fast access to data without needing the internet.",
+                    "It provides large storage space, remote access from anywhere, and automatic backups.",
+                    "It keeps your data protected if the device is not safely ejected.",
+                    "It uses zero bandwidth on your network."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that cloud storage offers lots of space, remote access (accessible from anywhere), and automatic backups, but requires an internet connection."
+            },
+            {
+                chapter: 1,
+                question: "When you watch a YouTube video, where are the files actually stored?",
+                options: [
+                    "On your computer's internal storage.",
+                    "On a USB flash drive.",
+                    "In a server farm (a centre full of computer servers).",
+                    "Inside your computer's root folder."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook explains that YouTube videos are not stored on your computer. Instead, they are stored in a big place far away with lots of servers, called a server farm."
+            },
+            {
+                chapter: 1,
+                question: "USB flash drives and memory cards are examples of which type of storage?",
+                options: [
+                    "Internal Storage",
+                    "Cloud Storage",
+                    "External Storage",
+                    "Virtual Storage"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook lists USB flash drives and memory cards as examples of external storage. They offer large expandable space and are easy to carry around (portability)."
+            },
+            {
+                chapter: 1,
+                question: "What does it mean to 'upload' a file?",
+                options: [
+                    "Receive a file on your device from the Internet.",
+                    "Send a file from your device to the Internet or other devices.",
+                    "Delete a file from a root folder.",
+                    "Compress a folder into a zip file."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook's keyword definition states that to upload means to send a file from your device to the Internet or other devices."
+            },
+            {
+                chapter: 1,
+                question: "What does it mean to 'download' a file?",
+                options: [
+                    "Receive a file on your device from the Internet or other devices.",
+                    "Send a file from your device to the Internet.",
+                    "Convert a text document into binary digits.",
+                    "Encrypt a file for data security."
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> The textbook's keyword definition states that to download means to receive a file on your device from the Internet or other devices."
+            },
+            {
+                chapter: 1,
+                question: "What is the binary number system?",
+                options: [
+                    "A system that uses digits from 0 to 9.",
+                    "A system that uses only two digits: 0 and 1.",
+                    "A system that uses letters A to Z.",
+                    "A system used exclusively by cloud storage."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that binary is a number system that uses only two digits: 0 and 1. All information processed by a computer is in the form of a sequence of 0s and 1s."
+            },
+            {
+                chapter: 1,
+                question: "What is the smallest unit of data, and how many of them make up 1 byte?",
+                options: [
+                    "A kilobyte is the smallest; 10 make a byte.",
+                    "A byte is the smallest; 8 make a bit.",
+                    "A bit is the smallest; 8 bits make 1 byte.",
+                    "A megabyte is the smallest; 1024 make a byte."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook's memory size table specifies that a 'Bit' is the smallest unit of data (a single binary digit, 0 or 1), and that 1 byte is equal to exactly 8 bits."
+            },
+            {
+                chapter: 1,
+                question: "How many bytes are in 1 kilobyte (KB)?",
+                options: [
+                    "100 bytes",
+                    "1000 bytes",
+                    "1024 bytes",
+                    "8 bytes"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> According to the memory size table in the textbook, 1 kilobyte (KB) is exactly equal to 1024 bytes."
+            },
+            {
+                chapter: 1,
+                question: "What does compressing files and folders do?",
+                options: [
+                    "It makes them larger to improve quality.",
+                    "It converts them into a root folder.",
+                    "It makes them smaller, taking up less space on your device, creating a zip file.",
+                    "It uploads them directly to a server farm."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook explains that compressing files and folders makes them smaller, taking up less space on your device. This creates a compressed file called a zip file, which is useful when sending large files through email."
+            },
+            {
+                chapter: 1,
+                question: "If you try to attach a file larger than 25 MB in Gmail, what happens automatically?",
+                options: [
+                    "The email is deleted.",
+                    "Gmail automatically uploads the file to Google Drive and includes a download link.",
+                    "The file is automatically compressed into a zip file.",
+                    "The computer crashes."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The Tech Help section in the textbook notes that Gmail has a limit for attachments (usually 25 MB). If your file is larger, Gmail will automatically upload the file to Google Drive and include a download link in the email."
+            },
+
+            // --- CHAPTER 2: Address of Digital Data (20 Questions) ---
+            {
+                chapter: 2,
+                question: "What is a Personal Area Network (PAN)?",
+                options: [
+                    "A network connecting devices across a city.",
+                    "A tiny network connecting devices within a very short distance, up to about 10 metres.",
+                    "A global network connecting continents.",
+                    "A network connecting multiple buildings on a campus."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook defines a PAN as a tiny network that connects devices within a very short distance, up to about 10 metres. It is used for personal purposes, like connecting devices at home."
+            },
+            {
+                chapter: 2,
+                question: "Which type of network connects devices within a small area, such as a home, office, or school?",
+                options: [
+                    "Metropolitan Area Network (MAN)",
+                    "Wide Area Network (WAN)",
+                    "Local Area Network (LAN)",
+                    "Campus Area Network (CAN)"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> According to the textbook, a Local Area Network (LAN) connects devices within a small area, such as a home, office or school."
+            },
+            {
+                chapter: 2,
+                question: "What does a Metropolitan Area Network (MAN) connect?",
+                options: [
+                    "Devices in a single room.",
+                    "Multiple LANs across a big area, such as a city or a large town.",
+                    "Devices across multiple buildings in a specific school campus.",
+                    "Devices across different continents."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that a MAN connects multiple LANs across a big area, such as a city or a large town."
+            },
+            {
+                chapter: 2,
+                question: "What is the function of a Modulator-Demodulator (MODEM)?",
+                options: [
+                    "It acts like a traffic controller for a network.",
+                    "It converts computer data into electrical signals that travel over telephone lines, and vice versa.",
+                    "It transmits data using light signals in glass strands.",
+                    "It stores websites and streaming media."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that a modem connects your home network to the Internet by converting computer data into electrical signals that travel over telephone lines, and converting incoming signals into data your computer understands."
+            },
+            {
+                chapter: 2,
+                question: "What is a Network Interface Card (NIC) also known as?",
+                options: [
+                    "A switch",
+                    "A router",
+                    "An Ethernet card",
+                    "A Wi-Fi Access Point"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook states that a Network Interface Card (NIC) is also known as an Ethernet card. It helps a computer join a network."
+            },
+            {
+                chapter: 2,
+                question: "Which type of cable uses thin strands of glass to transmit data as light signals?",
+                options: [
+                    "Ethernet cable",
+                    "Fibre optic cable",
+                    "Power cable",
+                    "USB cable"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> According to the textbook, a fibre optic cable is a special type of cable that uses thin strands of glass to transmit data as light signals, allowing for faster and longer-distance data transmission."
+            },
+            {
+                chapter: 2,
+                question: "Which network device acts like a 'traffic controller', connecting many devices and making sure data goes in the right direction without causing jams?",
+                options: [
+                    "Router",
+                    "Modem",
+                    "Switch",
+                    "Network Interface Card"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook compares a Switch to a traffic controller at a busy junction. It connects many devices (like computers and printers) and helps them share information efficiently."
+            },
+            {
+                chapter: 2,
+                question: "Which network device acts like a 'post office', deciding the best route to send your data to its destination?",
+                options: [
+                    "Switch",
+                    "Router",
+                    "Wi-Fi Access Point",
+                    "Ethernet cable"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook compares a Router to a post office. It decides the best route to send your data to its destination, connecting different networks like your home network to the Internet."
+            },
+            {
+                chapter: 2,
+                question: "How does a cellular network allow your mobile phone to stay connected while moving around a city?",
+                options: [
+                    "It uses a single giant Wi-Fi router for the whole city.",
+                    "The network is divided into small cells, and your phone automatically switches from one cell tower to another.",
+                    "It connects to an Ethernet cable under the road.",
+                    "It uses Bluetooth to connect to other phones."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that a cellular network is divided into small areas called cells, each with a cell tower. As you move, your phone's connection automatically switches from one tower to another so you stay connected."
+            },
+            {
+                chapter: 2,
+                question: "Every device on a network has a unique identifier that acts like an address. What is it called?",
+                options: [
+                    "Data packet",
+                    "Bandwidth",
+                    "Internet Protocol (IP) Address",
+                    "Root folder"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook states that every device on a network has a unique identifier called an IP address. It tells the network exactly where to deliver data, just like a home address."
+            },
+            {
+                chapter: 2,
+                question: "When you send data over the Internet, what is it divided into?",
+                options: [
+                    "Bandwidths",
+                    "Gigabytes",
+                    "Data packets",
+                    "Switches"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook explains that when you send data over the Internet, it is divided into smaller pieces called data packets. These packets travel through the network and come together at their destination."
+            },
+            {
+                chapter: 2,
+                question: "Do data packets always travel the exact same path to reach their destination?",
+                options: [
+                    "Yes, they always travel on one single fibre optic cable.",
+                    "No, depending on network conditions, they can take different routes and be reassembled at the end.",
+                    "Yes, but only if they are sent via Bluetooth.",
+                    "No, they randomly bounce until they expire."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook notes that data packets do not always travel the same path. Depending on network conditions, they can take different routes across the Internet and are reassembled correctly at the destination."
+            },
+            {
+                chapter: 2,
+                question: "What is 'bandwidth'?",
+                options: [
+                    "The physical width of an Ethernet cable.",
+                    "The secret code used in encryption.",
+                    "The amount of data that can be transferred over a network at once.",
+                    "The unique identifier for a computer."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> According to the textbook, bandwidth is the amount of data that can be transferred over a network at once. It is compared to a highway: a wider highway allows more cars (data) to travel together."
+            },
+            {
+                chapter: 2,
+                question: "What happens if bandwidth is low and many devices are using the Internet together?",
+                options: [
+                    "The internet speed increases.",
+                    "The network can slow down, videos might pause, and websites take longer to load.",
+                    "The router turns off automatically.",
+                    "Data packets merge into one massive packet."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that if bandwidth is low and many devices use the Internet together, there is too much data travelling at once. The network slows down, causing videos to pause and websites to load slowly."
+            },
+            {
+                chapter: 2,
+                question: "In a network, the computer that requests and receives data is called a ________, while the computer that provides and stores the data is called a ________.",
+                options: [
+                    "Server / Client",
+                    "Router / Switch",
+                    "Client / Server",
+                    "Modem / Node"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook states that the computer that requests and receives data is called a client, while the computer that provides and stores this data is called a server."
+            },
+            {
+                chapter: 2,
+                question: "What does 'encryption' do to protect data?",
+                options: [
+                    "It checks your identity using a fingerprint.",
+                    "It divides data into packets to hide them.",
+                    "It converts data into a secret code, making it unreadable to anyone without permission.",
+                    "It stops hackers from turning off your router."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> According to the textbook, encryption converts data into a secret code, making it unreadable to anyone without permission. Only people with the right key can read the original data."
+            },
+            {
+                chapter: 2,
+                question: "What is the purpose of 'authentication'?",
+                options: [
+                    "To convert data into unreadable code.",
+                    "To increase the bandwidth of a network.",
+                    "To check your identity first before giving you access to data.",
+                    "To route data packets across the MAN."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook defines authentication as checking your identity first before giving you access to data. This ensures only authorised people can see sensitive information."
+            },
+            {
+                chapter: 2,
+                question: "Unlocking a smartphone using fingerprint or facial recognition is known as what?",
+                options: [
+                    "Encryption",
+                    "Biometric authentication",
+                    "Password authentication",
+                    "Data routing"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that biometrics identify people based on unique physical traits, such as fingerprints or facial features. This is Biometric authentication."
+            },
+            {
+                chapter: 2,
+                question: "Which of the following is an example of a software issue that can cause the Internet to stop working?",
+                options: [
+                    "A physical router breaking.",
+                    "A hacker flooding a website with requests.",
+                    "A problem or bug in the programs that run our computers and networks.",
+                    "A severed fibre optic cable."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook lists 'Software Issues' as one reason for internet failure, explaining that the programs that run our computers and networks can have problems or bugs that make websites stop working."
+            },
+            {
+                chapter: 2,
+                question: "When a hacker tries to disrupt internet services by flooding a website with too many requests making it crash, what is this called?",
+                options: [
+                    "Hardware problem",
+                    "Cyber-Attack",
+                    "Bandwidth upgrading",
+                    "Biometric error"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook defines a Cyber-Attack as hackers trying to disrupt internet services, such as flooding a website with too many requests to make it crash and go offline."
+            },
+
+            // --- CHAPTER 3: Organising Text in Word (20 Questions) ---
+            {
+                chapter: 3,
+                question: "What does the 'Find and Replace' feature in Word allow you to do?",
+                options: [
+                    "Find spelling errors and automatically delete them.",
+                    "Quickly change any text throughout the whole document without replacing words one at a time.",
+                    "Find images on the internet and replace text with them.",
+                    "Merge two documents together."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that the Find and Replace feature allows you to quickly change any text in the whole document. For example, replacing the word 'gullet' with 'oesophagus' everywhere at once."
+            },
+            {
+                chapter: 3,
+                question: "In the Find and Replace box, what does the 'Match case' option do?",
+                options: [
+                    "It replaces words only if they match a specific capitalisation (e.g., uppercase 'G').",
+                    "It matches the font size of the replaced text.",
+                    "It matches whole words only.",
+                    "It replaces words with matching pictures."
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> The textbook explains that using the Match case function ensures that only words matching the specific capitalisation (like 'Gullet' with an uppercase 'G') are changed, leaving lowercase versions unchanged."
+            },
+            {
+                chapter: 3,
+                question: "What is the primary purpose of tables in Word?",
+                options: [
+                    "To draw pictures using a pencil cursor.",
+                    "To present data in rows and columns, organising information for easy reading and understanding.",
+                    "To compress large amounts of text into zip files.",
+                    "To calculate mathematical formulas."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that tables present data in rows and columns helping us to organise information for easy reading and understanding."
+            },
+            {
+                chapter: 3,
+                question: "When entering text in a table, what does pressing the 'Tab' key do?",
+                options: [
+                    "Takes you to the beginning of a row.",
+                    "Takes you to the end of a column.",
+                    "Moves the cursor to the next cell.",
+                    "Moves the cursor to the previous cell."
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> According to the table keyboard shortcuts in the textbook, the 'Tab' key moves the cursor to the next cell."
+            },
+            {
+                chapter: 3,
+                question: "Which keyboard shortcut moves the cursor to the previous cell in a table?",
+                options: [
+                    "Shift + Tab",
+                    "Alt + Page Up",
+                    "Alt + Home",
+                    "Ctrl + Tab"
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> The textbook's keyboard shortcut guide states that 'Shift + Tab' moves the cursor to the previous cell."
+            },
+            {
+                chapter: 3,
+                question: "Which keyboard shortcut takes you to the beginning of a row in a table?",
+                options: [
+                    "Alt + Page Down",
+                    "Alt + End",
+                    "Alt + Home",
+                    "Shift + Tab"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook's keyboard shortcut guide states that 'Alt + Home' takes you to the beginning of a row."
+            },
+            {
+                chapter: 3,
+                question: "If you want to insert a row ABOVE the current row, which option do you select under Rows & Columns?",
+                options: [
+                    "Insert Below",
+                    "Insert Left",
+                    "Insert Right",
+                    "Insert Above"
+                ],
+                correctIndex: 3,
+                explanation: "<strong>First Principles:</strong> The textbook explains that 'Insert Above' adds a row above the current row."
+            },
+            {
+                chapter: 3,
+                question: "How do you insert a column to the left of the current column?",
+                options: [
+                    "Click Insert Below",
+                    "Click Insert Left",
+                    "Click Insert Right",
+                    "Click Insert Above"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that 'Insert Left' adds a column to the left of the current column."
+            },
+            {
+                chapter: 3,
+                question: "What happens when you select 'Merge Cells' on a table?",
+                options: [
+                    "It divides a cell into smaller cells.",
+                    "It combines two or more selected cells into one large cell.",
+                    "It deletes the borders of the cells.",
+                    "It changes the row height automatically."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that you can use 'Merge Cells' to merge two or more cells into a large cell. This is useful for creating a title that spans several columns."
+            },
+            {
+                chapter: 3,
+                question: "What does it mean to 'Split Cells' in a table?",
+                options: [
+                    "To divide a cell into smaller cells.",
+                    "To delete a cell completely.",
+                    "To combine multiple cells into one.",
+                    "To separate a table into two different tables."
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> The textbook defines splitting cells as dividing a cell into smaller cells. You choose the number of columns and rows to split the cell into."
+            },
+            {
+                chapter: 3,
+                question: "Which tab do you click to apply beautiful border designs to a table?",
+                options: [
+                    "Home tab",
+                    "Table Design tab",
+                    "Layout tab",
+                    "View tab"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook instructs that to apply styles or border designs to a table, you must click the table, and under the Table Tools tab, click 'Table Design'."
+            },
+            {
+                chapter: 3,
+                question: "After you select a Border Style for your table, what does your cursor change into?",
+                options: [
+                    "A pencil",
+                    "A paintbrush",
+                    "An eraser",
+                    "A crosshair"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook notes that after selecting a border design from the Border Styles drop-down, your cursor will change into a paintbrush, allowing you to select the borders you want to change."
+            },
+            {
+                chapter: 3,
+                question: "How do you remove borders from the entire table at once?",
+                options: [
+                    "Use the eraser tool and click every line.",
+                    "Select the whole table and select 'No Border' on the Borders drop-down.",
+                    "Change the view of the document to Web Layout.",
+                    "Merge all the cells together."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook explains that to remove borders from the entire table, you should select the whole table and select 'No Border' on the Borders drop-down."
+            },
+            {
+                chapter: 3,
+                question: "Why might you change the 'view' of a document in Word?",
+                options: [
+                    "To change the font size of the entire text permanently.",
+                    "It allows you to better interact with your text, depending on whether you are reading, printing, or editing.",
+                    "To automatically correct typos.",
+                    "To compress the file size."
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The textbook states that while working on your document, changing the view allows you to better interact with your text by switching between modes like Read Mode, Print Layout, and Web Layout."
+            },
+            {
+                chapter: 3,
+                question: "Which document view presents your document for easy reading by removing most editing tools?",
+                options: [
+                    "Print Layout",
+                    "Read Mode",
+                    "Outline",
+                    "Draft"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> According to the textbook, Read Mode presents your document for easy reading by removing most of the editing tools and optimising the layout for a better reading experience."
+            },
+            {
+                chapter: 3,
+                question: "Which document view is the default and shows exactly how your document will look when printed?",
+                options: [
+                    "Print Layout",
+                    "Web Layout",
+                    "Read Mode",
+                    "Outline"
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> The textbook defines Print Layout as the default view, which shows how your document will look like when printed."
+            },
+            {
+                chapter: 3,
+                question: "Which document view shows how your document looks as a webpage?",
+                options: [
+                    "Draft",
+                    "Print Layout",
+                    "Web Layout",
+                    "Read Mode"
+                ],
+                correctIndex: 2,
+                explanation: "<strong>First Principles:</strong> The textbook explicitly states that Web Layout shows how your document looks like as a webpage."
+            },
+            {
+                chapter: 3,
+                question: "Which document view displays your document in a simple format with headings, allowing you to expand or collapse sections?",
+                options: [
+                    "Outline",
+                    "Read Mode",
+                    "Draft",
+                    "Web Layout"
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> According to the textbook, Outline mode displays your document in a simple format with headings and subheadings. You can expand or collapse sections, making it easier to manage large documents."
+            },
+            {
+                chapter: 3,
+                question: "Which document view hides most of the layout, allowing for faster scrolling and easier text editing?",
+                options: [
+                    "Draft",
+                    "Outline",
+                    "Print Layout",
+                    "Read Mode"
+                ],
+                correctIndex: 0,
+                explanation: "<strong>First Principles:</strong> The textbook states that Draft view hides most of the layout, allowing for faster scrolling and easier text editing."
+            },
+            {
+                chapter: 3,
+                question: "If the text view is too small or large in a new view, what function can you use to fix it?",
+                options: [
+                    "The Format tab",
+                    "The Zoom function in the View tab or the zoom slider",
+                    "The Table Design tab",
+                    "Find and Replace"
+                ],
+                correctIndex: 1,
+                explanation: "<strong>First Principles:</strong> The Tech Help section in the textbook explains that if the view is too small or large, you can use the Zoom function in the View tab or use the zoom slider on the bottom right of your document."
+            }
+        ];
+
+        // --- STATE VARIABLES ---
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let streak = 0;
+        let hasAnsweredCurrent = false;
+
+        const POINTS_PER_Q = 100;
+        const STREAK_BONUS = 50;
+
+        // --- DOM ELEMENTS ---
+        const landingView = document.getElementById('landing-view');
+        const quizView = document.getElementById('quiz-view');
+        const endView = document.getElementById('end-view');
+        
+        const qNumDisplay = document.getElementById('current-q-num');
+        const totalQDisplay = document.getElementById('total-q-num');
+        const scoreDisplay = document.getElementById('score-display');
+        const streakDisplay = document.getElementById('streak-display');
+        const streakIcon = document.getElementById('streak-icon');
+        
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        
+        const feedbackPanel = document.getElementById('feedback-panel');
+        const feedbackIcon = document.getElementById('feedback-icon');
+        const feedbackTitle = document.getElementById('feedback-title');
+        const feedbackExplanation = document.getElementById('feedback-explanation');
+        
+        const progressBar = document.getElementById('progress-bar');
+
+        // --- FUNCTIONS ---
+        
+        function init() {
+            totalQDisplay.textContent = quizData.length;
+        }
+
+        function startQuiz() {
+            landingView.classList.add('hidden');
+            quizView.classList.remove('hidden');
+            quizView.classList.add('fade-in');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            hasAnsweredCurrent = false;
+            const q = quizData[currentQuestionIndex];
+            
+            // Update UI Counters & Progress Bar
+            qNumDisplay.textContent = currentQuestionIndex + 1;
+            const progressPercentage = (currentQuestionIndex / quizData.length) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+            
+            // Set Question Text
+            questionText.textContent = q.question;
+            
+            // Clear previous options & feedback
+            optionsContainer.innerHTML = '';
+            feedbackPanel.classList.add('hidden');
+            feedbackPanel.classList.remove('pop');
+
+            // Generate Option Buttons
+            q.options.forEach((optText, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn w-full text-left p-5 rounded-xl font-medium text-gray-700 bg-white shadow-sm';
+                
+                // Add letter prefix (A, B, C, D)
+                const letter = String.fromCharCode(65 + index);
+                btn.innerHTML = `<span class="inline-block bg-gray-100 text-gray-600 rounded w-8 h-8 text-center leading-8 mr-3 font-bold">${letter}</span> ${optText}`;
+                
+                btn.onclick = () => handleAnswer(index, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleAnswer(selectedIndex, selectedBtn) {
+            if (hasAnsweredCurrent) return;
+            hasAnsweredCurrent = true;
+
+            const q = quizData[currentQuestionIndex];
+            const isCorrect = (selectedIndex === q.correctIndex);
+            
+            // Disable all buttons
+            const allBtns = optionsContainer.querySelectorAll('button');
+            allBtns.forEach((btn, idx) => {
+                btn.disabled = true;
+                btn.classList.remove('hover:bg-eef2ff', 'cursor-pointer');
+                
+                // Highlight correct answer
+                if (idx === q.correctIndex) {
+                    btn.classList.add('correct');
+                } else if (idx === selectedIndex && !isCorrect) {
+                    // Highlight selected wrong answer
+                    btn.classList.add('incorrect');
+                } else {
+                    btn.classList.add('opacity-50');
+                }
+            });
+
+            // Handle Gamification Logic
+            if (isCorrect) {
+                streak++;
+                let pointsEarned = POINTS_PER_Q;
+                if (streak > 1) {
+                    pointsEarned += (streak - 1) * STREAK_BONUS;
+                }
+                score += pointsEarned;
+                animateScore(score);
+                updateStreakUI();
+                showFeedback(true, q.explanation, pointsEarned);
+            } else {
+                streak = 0;
+                updateStreakUI();
+                showFeedback(false, q.explanation, 0);
+            }
+        }
+
+        function animateScore(newScore) {
+            scoreDisplay.textContent = newScore;
+            scoreDisplay.classList.add('pop');
+            setTimeout(() => scoreDisplay.classList.remove('pop'), 400);
+        }
+
+        function updateStreakUI() {
+            streakDisplay.textContent = streak;
+            if (streak >= 3) {
+                streakIcon.classList.add('fire-active');
+                streakIcon.classList.remove('text-gray-400');
+            } else {
+                streakIcon.classList.remove('fire-active');
+                streakIcon.classList.add('text-gray-400');
+            }
+            streakDisplay.classList.add('pop');
+            setTimeout(() => streakDisplay.classList.remove('pop'), 400);
+        }
+
+        function showFeedback(isCorrect, explanation, points) {
+            feedbackPanel.classList.remove('hidden');
+            feedbackPanel.classList.add('pop');
+            
+            if (isCorrect) {
+                feedbackPanel.classList.remove('border-red-500');
+                feedbackPanel.classList.add('border-green-500', 'bg-green-50');
+                feedbackIcon.innerHTML = `<svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                let pointsText = `+${POINTS_PER_Q} points`;
+                if (streak > 1) pointsText += ` (+${(streak-1)*STREAK_BONUS} Streak Bonus!)`;
+                feedbackTitle.innerHTML = `Correct! <span class="text-sm font-normal text-green-700 ml-2">${pointsText}</span>`;
+                feedbackTitle.className = 'text-2xl font-bold text-green-800';
+            } else {
+                feedbackPanel.classList.remove('border-green-500', 'bg-green-50');
+                feedbackPanel.classList.add('border-red-500', 'bg-red-50');
+                feedbackIcon.innerHTML = `<svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                feedbackTitle.textContent = 'Incorrect';
+                feedbackTitle.className = 'text-2xl font-bold text-red-800';
+            }
+
+            feedbackExplanation.innerHTML = explanation;
+            
+            // Scroll to bottom smoothly so user sees explanation
+            setTimeout(() => {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }, 100);
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Ensure progress bar completes
+                progressBar.style.width = '100%';
+                showEndScreen();
+            }
+        }
+
+        function showEndScreen() {
+            quizView.classList.add('hidden');
+            endView.classList.remove('hidden');
+            endView.classList.add('fade-in');
+            
+            document.getElementById('final-score').textContent = score;
+
+            // Simple Badge logic based on percentage
+            const maxBase = quizData.length * POINTS_PER_Q; 
+            const badgeText = document.getElementById('badge-text');
+            const goldBadge = document.getElementById('badge-gold');
+            
+            if (score >= maxBase * 0.8) {
+                badgeText.textContent = "Digital Master Badge";
+                goldBadge.classList.add('text-yellow-400');
+            } else if (score >= maxBase * 0.5) {
+                badgeText.textContent = "Digital Explorer Badge";
+                goldBadge.classList.remove('text-yellow-400');
+                goldBadge.classList.add('text-gray-400'); // Silver
+            } else {
+                badgeText.textContent = "Digital Beginner Badge";
+                goldBadge.classList.remove('text-yellow-400');
+                goldBadge.classList.add('text-amber-700'); // Bronze
+            }
+        }
+
+        // Initialize App
+        window.onload = init;
+    </script>
+</body>
+</html>
